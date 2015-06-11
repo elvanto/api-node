@@ -1,6 +1,6 @@
 {
   "name": "elvanto-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "API wrapper for use in conjunction with an Elvanto account. This wrapper can be used by developers to develop programs for their own churches using an API Key, or to design integrations to share to other churches using OAuth authentication.",
   "main": "./lib/elvanto.js",
   "keywords": [

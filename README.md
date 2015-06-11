@@ -7,7 +7,7 @@ This library is all set to go with version 1 of the <a href="https://www.Elvanto
 The preferred way to install Elvanto for Node.js is to use the npm package manager for Node.js. Simply type the following into a terminal window:
 
 ```js
-npm install elvanto-node
+npm install elvanto-api
 ```
 
 ## Authenticating
@@ -18,7 +18,7 @@ The Elvanto API supports authentication using either <a href="https://www.Elvant
 
 * Quick summary
 This is an API wrapper to use in conjunction with an Elvanto account. This wrapper can be used by developers to develop programs for their own churches, or to design integrations to share to other churches using OAuth authentication.
-* Version 1.0
+* Version 1.0.1
 
 ### Using OAuth 2
 
