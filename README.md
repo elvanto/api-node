@@ -1,6 +1,6 @@
-# Elvanto API Ruby Library
+# Elvanto API Node.js Library
 
-This library is all set to go with version 1 of the <a href="https://www.ElvantoAPI.com/api/" target="_blank">Elvanto API</a>.
+This library is all set to go with version 1 of the <a href="https://www.elvanto.com/api/" target="_blank">Elvanto API</a>.
 
 ## Installation
 
@@ -12,17 +12,16 @@ npm install elvanto-api
 
 ## Authenticating
 
-The Elvanto API supports authentication using either <a href="https://www.ElvantoAPI.com/api/getting-started/#oauth" target="_blank">OAuth 2</a> or an <a href="https://www.ElvantoAPI.com/api/getting-started/#api_key" target="_blank">API key</a>.
+The Elvanto API supports authentication using either <a href="https://www.elvanto.com/api/getting-started/#oauth" target="_blank">OAuth 2</a> or an <a href="https://www.elvanto.com/api/getting-started/#api_key" target="_blank">API key</a>.
 
 ### What is This For?
 
-* Quick summary
-This is an API wrapper to use in conjunction with an Elvanto account. This wrapper can be used by developers to develop programs for their own churches, or to design integrations to share to other churches using OAuth authentication.
-* Version 1.0.1
+* This is an API wrapper to use in conjunction with an Elvanto account. This wrapper can be used by developers to develop programs for their own churches, or to design integrations to share to other churches using OAuth authentication.
+* Version 1.0.0
 
 ### Using OAuth 2
 
-This library provides functionality to help you obtain an Access Token and Refresh token. The first thing your application should do is redirect your user to the Elvanto authorization URL where they will have the opportunity to approve your application to access their Elvanto account. You can get this authorization URL by using the `authorizeUrl` method, like so:
+This library provides functionality to help you obtain an access token and refresh token. The first thing your application should do is redirect your user to the Elvanto authorization URL where they will have the opportunity to approve your application to access their Elvanto account. You can get this authorization URL by using the `authorizeUrl` method, like so:
 
 ```js
 var elvanto = require('elvanto-node');
@@ -45,7 +44,6 @@ Once you have an access token and refresh token for your user, you can authentic
 
 ```js
 var elvanto = require('elvanto-node');
-elvanto.refreshToken(refreshToken, callback);
 elvanto.configure({accessToken: newAccessToken});
 allPeople = elvanto.apiCall("people/getAll", {}, callback);
 ```
@@ -77,4 +75,4 @@ Follow our <a href="http://twitter.com/ElvantoAPI" target="_blank">Twitter</a> t
 
 For bugs with the API Node JS Wrapper please use the <a href="https://github.com/elvanto/api-node/issues">Issue Tracker</a>.
 
-For suggestions on the API itself, please <a href="http://support.ElvantoAPI.com/support/discussions/forums/1000123316" target="_blank">post in the forum</a> or contact us <a href="http://support.ElvantoAPI.com/support/tickets/new/" target="_blank">via our website</a>.
+For suggestions on the API itself, please <a href="http://support.elvanto.com/support/discussions/forums/1000123316" target="_blank">post in the forum</a> or contact us <a href="http://support.elvanto.com/support/tickets/new/" target="_blank">via our website</a>.
