@@ -24,7 +24,7 @@ The Elvanto API supports authentication using either <a href="https://www.elvant
 This library provides functionality to help you obtain an access token and refresh token. The first thing your application should do is redirect your user to the Elvanto authorization URL where they will have the opportunity to approve your application to access their Elvanto account. You can get this authorization URL by using the `authorizeUrl` method, like so:
 
 ```js
-var elvanto = require('elvanto-node');
+var elvanto = require('elvanto-api');
 var authorizeUrl = elvanto.authorizeUrl(clientId, redirectUri, scope, state);
 // Redirect your users to authorizeUrl.
 ```
@@ -32,7 +32,7 @@ var authorizeUrl = elvanto.authorizeUrl(clientId, redirectUri, scope, state);
 If your user approves your application, they will then be redirected to the `redirectUri` you specified, which will include a `code` parameter, and optionally a `state` parameter in the query string. Your application should implement a handler which can exchange the code passed to it for an access token, using `exchangeToken` like so:
 
 ```js
-var elvanto = require('elvanto-node');
+var elvanto = require('elvanto-api');
 elvanto.exchangeToken(clientId, clientSecret, code, redirectUri, callback);
 elvanto.configure({accessToken: accessToken});
 // Use callback function to get access to access_token, expires_in and refresh_token.
@@ -43,7 +43,7 @@ At this point you have an access token and refresh token for your user which you
 Once you have an access token and refresh token for your user, you can authenticate and make further API calls like so:
 
 ```js
-var elvanto = require('elvanto-node');
+var elvanto = require('elvanto-api');
 elvanto.configure({accessToken: newAccessToken});
 allPeople = elvanto.apiCall("people/getAll", {}, callback);
 ```
@@ -51,14 +51,14 @@ allPeople = elvanto.apiCall("people/getAll", {}, callback);
 All OAuth tokens have an expiry time, and can be renewed with a corresponding refresh token. If your access token expires when attempting to make an API call, you will receive an error response, so your code should handle this. Here's an example of how you could do this:
 
 ```js
-var elvanto = require('elvanto-node');
+var elvanto = require('elvanto-api');
 elvanto.refreshToken(refreshToken, callback);
 ```
 
 ### Using an API key
 
 ```js
-var elvanto = require('elvanto-node');
+var elvanto = require('elvanto-api');
 elvanto.configure({apiKey: apiKey});
 var people = elvanto.apiCall("people/search", {"search": {"firstname": firstname}}, callback);
 ```
